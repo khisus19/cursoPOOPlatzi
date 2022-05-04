@@ -1,12 +1,13 @@
 <?php
-class UberPool extends Car {
-    public $brand;
-    public $model,
+require_once('car.php')
+class UberBlack extends Car {
+    public $typeCarAccepted;
+    public $seatsMaterial;
 
-    public function __construct($license, $driver, $brand, $model){
+    public function __construct($license, $driver, $typeCarAccepted, $seatsMaterial){
         parent::__construct($license, $driver);
-        $this->brand = $brand;
-        $this->model = $model;
+        $this->typeCarAccepted = $typeCarAccepted;
+        $this->seatsMaterial = $seatsMaterial;
     }
 }
 ?>
