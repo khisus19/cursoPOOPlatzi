@@ -9,4 +9,8 @@ $uberX->printDataCar();
 
 $uberPool = new UberPool("TYUD43", new Account("Andrea Mirto", "ANM123"), "Dodge", "Attitude");
 $uberPool->printDataCar();
+
+$uberVan = new UberVan("OJS536", new Account("Raul Ramirez", "RRI294"), "Nissan", "Versa");
+$uberVan->setPassenger(6);
+$uberVan->printDataCar();
 ?>
