@@ -51,22 +51,22 @@ function deepCopy(subject){
     // Y al final de todo, la funcion debe devolver algo,verdad? en este caso, quien es el que almaceno todos los datos de el objeto que copiamos? el copySubject, bien, ese es quien retornamos.
 }
 
-
-const studentBase = {
-    name: undefined,
-    email: undefined,
-    age: undefined,
-    approvedCourses: undefined,
-    learningPaths: undefined,
-    socialMedia: {
-        twitter: undefined,
-        instagram: undefined,
-        facebook: undefined,
-    },
-};
-
 function requiredParam(param) {
     throw new Error(param + " este parámetro es obligatorio");
+}
+
+function createLearningPath({
+    name = requiredParam("name"),
+    courses = [],
+}) {
+    const private = {
+        "_name": name,
+        "_courses": courses,
+    };
+
+    const public = {};
+
+    return public;
 }
 
 // Patrón RORO (Receive an Object, Return an Object)
@@ -104,22 +104,7 @@ function createStudent({
                 console.warn("Tu nombre debe tener al menos un carácter")
             }
         },
-        // readName() {
-        //     return private["_name"];
-        // },
-        // changeName(newName) {
-        //     private["_name"] = newName;
-        // },
     };
-
-    /* Object.defineProperty(public,"readName", {
-        writable: false,
-        configurable: false,
-    });
-    Object.defineProperty(public, "changeName", {
-        writable: false,
-        configurable: false,
-    }); */
     return public;
 }
 
